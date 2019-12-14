@@ -37,7 +37,7 @@ A thread is just a piece of code that executes at run time. Threads unlike loops
 There are other issues with threading. Every thread requires our memory to execute them in a certain priority. RAM can affect the thread speed. We therefore have to be very careful to control how we execute threads. Threads must be synchronised and we have to tell the system exactly what to do. Once we have solved all these problems, however, threads can be very useful. In fact, multi-tasking programming is the most usual way of doing programming.
 
 ## 3. Networking with Java
-#### Connect to databases, creating servers.
+#### Connecting to databases, creating servers.
 
 This topic also involves threading. What happenss if we want to make our threads work in an effective way? If you have two threads and these include complicated loops of complex data structures this may overload our memory. One solution is to take the thread to another computer to execute there. Each computer would then execute the thread individually. This then involves the process of connecting computers together. We can therefore multi-task using different computers. Here by connection we mean not only the process of sending information but also synchronisation. We can therefore put our applications on different computers. We synchronise these computers through the concept of a server.
 

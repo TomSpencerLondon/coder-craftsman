@@ -9,12 +9,14 @@ author: "Tom Spencer"
 
 Today I did a bit of scripting for replacing several phrases in lots of files. I used the following script:
 
-```for f in $(grep -l "^SECRET_KEY_BASE" directory*)
+```
+for f in $(grep -l "^SECRET_KEY_BASE" directory*)
   do
     echo ${f}
     sed -i '/^SECRET_KEY_BASE=.*$/a
   AIRBRAKE_PROJECT_ID=*********\nAIRBRAKE_PROJECT_KEY=************' ${f}
-done```
+done
+```
 
 The block `for f in.. do... done`
 is a for loop to encapsulate the tasks within it. The command `$(grep -l "^SECRET_KEY_BASE" ctesius1*)` searches and makes a list of files in the directory that have the phrase `SECRET_KEY_BASE` at the beginning of the line.
@@ -27,7 +29,8 @@ So, in the above example we are loop over files in directory which have `SECRET_
 
 We also grokked over another script that used awk (a very powerful shell script). awk is up there with `sed` in terms of power. It is an excellent tool for building UNIX/Linux shell scripts. AWK is a programming langauge designed for processing text-based data either in files or data streams. You can combine `awk` with shell scripts or directly use at the shell prompt. Here is the script:
 
-```#!/bin/bash
+```
+#!/bin/bash
 set -ue
 
 delay=30
@@ -58,7 +61,8 @@ for node in ${nodes}
       sleep "${delay}"
     fi
   done
-done```
+done
+```
 
 Here we put `#!/bin/bash` at the top of the file so that the unix shell knows what kind of interpreter to run. The code `use set-ue` ensures that the file exists if it hits an error. We then set the variables delay and attempts at the top of the file. We also include the .env file in the script at the top of the file. Then we set the template through the environment variable `DATABASE_URL_TEMPLATE`. We then set the nodes to the environment variable `DATABASE_NODES` and use `awk` to iterate over the number of fields in the `DATABASE_NODES` variable. We then iterate over the nodes and set each node to `healthcheck_host` and then make a `curl` request to the `healthcheck_host`. We then echo the messages relating migrations, url, replacing the host file with the new url and then calling `bundle exec rake db:migrate` on the url and printing the messages if the response has been successful.
 
