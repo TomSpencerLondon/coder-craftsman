@@ -77,7 +77,8 @@ A simple grep command could include `grep "boo" a_file`. This would return every
 The tail command is a command-line utility for outputting the last part of files given to it via standard input. It writes results to standard output. By default tail returns the last ten lines of each file that it is given. It may also be used to follow a file in real-time and watch as new lines are written to it.
 So the following:
 
-```tail /usr/share/dict/words
+```
+tail /usr/share/dict/words
 zygote's
 zygotes
 zygotic
@@ -87,7 +88,8 @@ Zyrtec
 Zyrtec's
 Zyuganov
 Zyuganov's
-Zzz```
+Zzz
+```
 
 shows the last ten lines of the file. To set the number of lines to show with tail we can pass the -n option followed by the number of lines to show. To watch changes in a file we use `tail -f`. We can also use the pipe to add other commands to the tail command. This is true of all shell commands:
 
@@ -99,6 +101,7 @@ libao.conf
 mime.types
 pcmcia
 ```
+
 Here the tail command is used to show the last five files modified. For `ls -t` the -t flag means sort by last modified. 
 
 # head
@@ -107,7 +110,8 @@ The head command is a command-line utility for outputting the first part of file
 
 To view the first ten lines of a file pass the name of a file to the head command. The first ten lines of the file will be printed to standard output.
 
-```head /usr/share/dict/words
+```
+head /usr/share/dict/words
 A
 a
 AA
@@ -117,25 +121,30 @@ aah
 Aaliyah
 Aaliyah's
 aardvark
-aardvark's```
+aardvark's
+```
 
 
 # xargs
 
 This command reads data from standard input (stdin) and executes the command (supplied to it as an argument). If no command is supplied as an argument to xargs, the default command that the tool executes is echo. For example:
+
 ```
 echo "hello world" | xargs
 ```
+
 Prints "hello world" in the command line. xargs just uses echo by default if you don't give it a command. We can also pass commands to xargs:
 
 ```
 printf "1\n2\n3\n" | xargs touch 
 ```
+
 Here we take the printf command and pipe it to touch meaning that we will create three files called 1, 2, 3 respectively in our directory. The command:
 
 ```
 ls | xargs rm
 ```
+
 would then remove all the files in the directory. Of course ensure that you are careful with this one. Finally a nice use of xargs with find to rename all three files in the directory would be the following:
 
 ```
