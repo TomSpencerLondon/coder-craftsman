@@ -5,8 +5,6 @@ title: "Scripting"
 author: "Tom Spencer"
 ---
 
-# Scripting
-
 Today I did a bit of scripting for replacing several phrases in lots of files. I used the following script:
 
 ```

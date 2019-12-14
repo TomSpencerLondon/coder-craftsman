@@ -1,11 +1,9 @@
 ---
 path: "/post-one"
 date: "2019-12-13"
-title: "Java Programming"
+title: "Java Programming An introduction"
 author: "Tom Spencer"
 ---
-
-# Java Programming An introduction
 
 The following is a short summary of my first learnings in Java. In this article I would like to focus on three parts of Java Language. Firstly, Data Structures, i.e. how to organise data in Java. Secondly, I will talk about Threads, as in how Java can be executed. Thirdly, I will talk about Networking with Java, i.e. how we can connect to databases and create servers with Java.
 
