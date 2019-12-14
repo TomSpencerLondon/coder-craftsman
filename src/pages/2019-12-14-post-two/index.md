@@ -72,7 +72,7 @@ The fundamental shell commands include `sed`, `awk`, `grep`, `tail`, `head`, `xa
 
 A simple grep command could include `grep "boo" a_file`. This would return every line that contains the word boo. `grep -n "boo" a_file` also shows the line numbers of occurrences of a string in a file. `grep -vn "boo" a_file` returns all the lines that don't contain the string "boo".
 
-# tail
+## tail
 
 The tail command is a command-line utility for outputting the last part of files given to it via standard input. It writes results to standard output. By default tail returns the last ten lines of each file that it is given. It may also be used to follow a file in real-time and watch as new lines are written to it.
 So the following:
@@ -104,7 +104,7 @@ pcmcia
 
 Here the tail command is used to show the last five files modified. For `ls -t` the -t flag means sort by last modified. 
 
-# head
+## head
 
 The head command is a command-line utility for outputting the first part of files given to it via standard input. It writes results to standard output. By default head returns the first ten lines of each file that it is given. In this respect it is quite similar to `tail`.
 
@@ -125,7 +125,7 @@ aardvark's
 ```
 
 
-# xargs
+## xargs
 
 This command reads data from standard input (stdin) and executes the command (supplied to it as an argument). If no command is supplied as an argument to xargs, the default command that the tool executes is echo. For example:
 
