@@ -16,9 +16,6 @@ The first most basic form of data structure is an array. It is easy to read from
 
 Queues and stacks are more complex data structures. They are like lists but they have an inherent order which is defined by their names. When we think of queues we might think of waiting in line for service at a bank. The queue here is first in first out. The first person in the queue is the first to get served.
 
-![image](https://user-images.githubusercontent.com/63193195/78504422-153ddf00-7765-11ea-89dd-a381d33da093.png)
-
-
 For stacks, on the other hand, we might think of a stack of books. We must take the last book from the stack unless we want it to fall down. So for stacks the rule is first one in, first one out.
 
 Queues and stacks help us to resolve the issue of the ends and beginnings on lists and these structures are very important for serving information to clients. However the middle of the list is still an issue for both queues and stacks.
