@@ -10,7 +10,10 @@ This is the first in a series of five blogs on the SOLID Design Principles. Thes
 - Interface Segregation Principle
 - Dependency Inversion Principle
 
-We will start by looking at the Single Responsibility Principle. 
+#### We will start by looking at the Single Responsibility Principle. 
+
+![image](https://user-images.githubusercontent.com/63193195/78601077-0716be00-784c-11ea-8ec6-492f259b0891.png)
+
 
 This principle states that every module or class should have responsibility over one part of the functionality the software provides, and that this should be completely encapsulated by the class, module or function. As such it helps to limit the impact of future changes. 
 
