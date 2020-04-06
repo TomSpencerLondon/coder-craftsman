@@ -33,3 +33,47 @@ class Spr {
     }
 }
 ```
+We need classes to have their own single responsibility. So we'll create two classes. We create a note and also a persistence instance. We then call persistence.saveToFile(note, filename) on persistence. 
+
+This is the Note class:
+```
+package SPR;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Note {
+    private final List<String> comments = new ArrayList<>();
+    private static int count = 0;
+
+    void addComment(String text) {
+        comments.add("" + (++count) + ": " + text);
+    }
+
+    @Override
+    public String toString() {
+        return String.join(System.lineSeparator(), comments);
+    }
+}s
+```
+It has responsibility for addComment and a toString method. Nothing else. 
+
+Our Persistence() class also only does one thing:
+```
+package SPR;
+
+import java.io.PrintStream;
+
+class Persistence {
+    void saveToFile(Note note, String filename) throws Exception {
+        try (PrintStream out = new PrintStream(filename)) {
+            out.println(note.toString());
+        }
+    }
+}
+```
+Its role here here is to saveToFile. 
+
+As we can see, in each of these cases each class has a single responsibility. As such the code is easier to maintain. If we needed to change some of the formatting at a future point, we would not need to change the class as the responsibilities are separated out.
+
+In the next blog we will look at the Open/Closed Principle.
