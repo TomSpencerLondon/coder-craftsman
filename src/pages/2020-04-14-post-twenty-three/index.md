@@ -9,16 +9,16 @@ The **Liskov substitution principle** states that objects in a programme should 
 
 One of the harder principles to make sense of, it was first introduced by Barbara Liskov at a 1987 conference keynote address titled Data abstraction and hierarchy. The Liskov substitution principle (LSP) is a particular definition of a subtyping relation, called (strong) behavioral subtyping.
 
-It can be stated as such:
+**It can be stated as such:**
 
 If S is a subtype of T, then objects of type T in a programme may be replaced with objects of type S without altering any of the desirable properties of that programme.
 
-You can express it mathematically as:
+**You can express it mathematically as:**
 
 *Let ϕ(x) be a property provable about objects x of type T.
 Then ϕ(y) should be true for objects y of type S, where S is a subtype of T.*
 
-Or to make it simpler, we can express it in "duck terms":
+**Or to make it simpler, here it is in "duck terms":**
 
 If it looks like a 🦆, quacks like a 🦆 but needs batteries - you probably have the wrong level of abstraction.
 
