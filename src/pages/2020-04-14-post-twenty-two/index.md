@@ -10,10 +10,10 @@ During the 1990s, Robert C. Martin redefined the principle as: "you should be ab
 
 Let's suppose you have written code in one place within your application and that code is now used elsewhere. You want to be able to adapt this to different purposes by writing additional code but not by modifying the code itself. This is because modifying it will likely cause changes to be made everywhere it is used.
 
-Let's look at how we make sure our code is compliant with the open/closed principle:
+This is an example of the Open Closed principle:
 
 ```
-This is an example of Open Closed:
+
 
 package OCP;
 
@@ -185,6 +185,6 @@ public class Ocp {
                 new AndSpecification<>(new ColorSpecification(Color.BLUE), new SizeSpecification(Size.LARGE)))
                 .forEach(p -> System.out.println(p.name + " is large and blue"));
   ```
-We have made sure our code is compliant with the open/closed principle by using inheritance and implementing interfaces that enable classes to polymorphically substitute for each other.
+We have made sure our code is compliant with the Open Closed principle by using inheritance and implementing interfaces that enable classes to polymorphically substitute for each other.
 
 The next principle is the Liskov substitution principle, read the blog here. 
