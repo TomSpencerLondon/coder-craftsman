@@ -4,6 +4,8 @@ This is the second in a series of five blogs on the SOLID Design Principles. Rea
 
 The Open Closed Principle states that software entities should be open for extension, but closed for modification.
 
+![open closed](https://user-images.githubusercontent.com/63193195/79230176-1bfedd00-7e5c-11ea-9851-ce427a91e1cc.jpg)
+
 Bertrand Meyer first came up with the term “open/closed principle” in the 1980s. What he meant by the principle, was that a module is “open” if it is still available for extension and a module is “closed” if it is available for use by other modules, ie it has been given a well-defined, stable description.
 
 During the 1990s, Robert C. Martin redefined the principle as: "you should be able to extend the behavior of a system without having to modify that system". Meaning interface specifications can be reused through inheritance but implementation doesn’t have to be.
