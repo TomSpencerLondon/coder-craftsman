@@ -1,10 +1,10 @@
-# Interface Segregation
+# Interface Segregation Principle
 
-This is the fourth in a series of five blogs on the SOLID Design Principles. Read the blog on the previous principle, the Liskov substitution principle here.
+This is the fourth in a series of five blogs on the SOLID Design Principles. Read the blog on the previous principle, the Liskov Substitution Principle here.
 
-The Interface Segregation principle states that no client should be forced to depend on methods it does not use.
+The **Interface Segregation Principle** states that no client should be forced to depend on methods it does not use.
 
-![interface segregation](https://user-images.githubusercontent.com/63193195/79233735-28d1ff80-7e61-11ea-9900-afafd74e7799.jpg)
+![pies](https://user-images.githubusercontent.com/63193195/79235644-c9c1ba00-7e63-11ea-9db7-a202a3328f4b.jpg)
 
 Robert C. Martin (Uncle Bob) defined the interface-segregation principle (ISP) whilst working with Xerox to improve the software for their new printers. He stated it as:
 
