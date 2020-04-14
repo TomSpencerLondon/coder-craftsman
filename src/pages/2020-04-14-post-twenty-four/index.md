@@ -1,5 +1,11 @@
 # Interface Segregation
 
+This is the fourth in a series of five blogs on the SOLID Design Principles. Read the blogs on the other principles:
+
+
+
+Read about the first principle, the Single responsibility principle here [title](https://www.example.com)
+
 Robert C. Martin (Uncle Bob) defined the interface-segregation principle (ISP) whilst working with Xerox to improve the software for their new printers. He stated it as:
 
 A client should never be forced to implement an interface that it doesn't use. Nor should clients be forced to depend on methods they do not use.
