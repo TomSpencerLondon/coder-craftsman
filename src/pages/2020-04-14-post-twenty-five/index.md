@@ -4,6 +4,7 @@ This is the final piece in a series of five blogs on the SOLID Design Principles
 
 The **Dependency Inversion Principle** (DIP), is primarily concerned with decoupling software modules. It states that one should "depend upon abstractions, [not] concretions."
 
+![dependency inversion principle](https://user-images.githubusercontent.com/63193195/79238723-a7ca3680-7e67-11ea-85a3-c1e0423fdedd.jpg)
 
 To elaborate, we can express DIP as follows:
 
