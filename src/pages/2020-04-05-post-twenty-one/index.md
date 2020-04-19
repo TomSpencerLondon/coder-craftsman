@@ -5,8 +5,6 @@ title: "Single Responsibility Principle"
 author: "Tom Spencer"
 ---
 
-# Single Responsibility Principle
-
 This is the first in a series of five blogs on the SOLID Design Principles. These five principles apply to object-orientated programme and form a subset of the many principles promoted by American software engineer and instructor Robert C. Martin (Uncle Bob), first set out in a paper in 2000. The aim of the principles is to make a codebase for software designs which is more understandable, flexible and maintainable. 
 
 ### SOLID is a mnemonic  which stands for:

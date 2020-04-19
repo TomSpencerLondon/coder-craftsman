@@ -5,8 +5,6 @@ title: "Open Closed Principle"
 author: "Tom Spencer"
 ---
 
-# Open Closed Principle:
-
 This is the second in a series of five blogs on the SOLID Design Principles. Read about the first principle, the Single responsibility principle here [title](https://www.example.com)
 
 The **Open Closed Principle** states that software entities should be open for extension, but closed for modification.

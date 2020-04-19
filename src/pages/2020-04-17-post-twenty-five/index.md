@@ -5,8 +5,6 @@ title: "Dependency Inversion Principle"
 author: "Tom Spencer"
 ---
 
-# Dependency Inversion Principle:
-
 This is the final piece in a series of five blogs on the SOLID Design Principles. Read about the fourth principle, the Interface Segregation Principle here [title](https://www.example.com)
 
 The **Dependency Inversion Principle** (DIP), is primarily concerned with decoupling software modules. It states that one should "depend upon abstractions, [not] concretions."

@@ -5,9 +5,6 @@ title: "Liskov Substitution"
 author: "Tom Spencer"
 ---
 
-# Liskov substitution principle
-
-
 This is the second in a series of five blogs on the SOLID Design Principles. Read about the first principle, the Single responsibility principle here [title](https://www.example.com), and the second - the Open-closed principle here. 
 
 The **Liskov substitution principle** states that objects in a programme should be replaceable with instances of their subtypes without altering the correctness of that programme.

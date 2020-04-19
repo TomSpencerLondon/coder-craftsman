@@ -5,8 +5,6 @@ title: "Interface Segregation Principle"
 author: "Tom Spencer"
 ---
 
-# Interface Segregation Principle
-
 This is the fourth in a series of five blogs on the SOLID Design Principles. Read the blog on the previous principle, the Liskov Substitution Principle here.
 
 The **Interface Segregation Principle** states that no client should be forced to depend on methods it does not use.
