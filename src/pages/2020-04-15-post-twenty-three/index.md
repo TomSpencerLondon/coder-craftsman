@@ -1,3 +1,10 @@
+---
+path: "/post-twenty-three"
+date: "2020-04-15"
+title: "Liskov Substitution"
+author: "Tom Spencer"
+---
+
 # Liskov substitution principle
 
 

@@ -1,3 +1,10 @@
+---
+path: "/post-twenty-two"
+date: "2020-04-16"
+title: "Open Closed Principle"
+author: "Tom Spencer"
+---
+
 # Open Closed Principle:
 
 This is the second in a series of five blogs on the SOLID Design Principles. Read about the first principle, the Single responsibility principle here [title](https://www.example.com)

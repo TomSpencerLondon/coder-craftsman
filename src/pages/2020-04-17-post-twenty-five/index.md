@@ -1,3 +1,10 @@
+---
+path: "/post-twenty-five"
+date: "2020-04-17"
+title: "Dependency Inversion Principle"
+author: "Tom Spencer"
+---
+
 # Dependency Inversion Principle:
 
 This is the final piece in a series of five blogs on the SOLID Design Principles. Read about the fourth principle, the Interface Segregation Principle here [title](https://www.example.com)
