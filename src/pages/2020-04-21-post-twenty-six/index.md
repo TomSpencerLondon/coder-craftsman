@@ -34,19 +34,11 @@ public class Animal {
 	private String sound;
   
 ```
-  // Instead of using an interface in a traditional way
-	// we use an instance variable that is a subclass
-	// of the Flys interface.
-	
-	// Animal doesn't care what flyingType does, it just
-	// knows the behavior is available to its subclasses
-	
-	// This is known as Composition : Instead of inheriting
-	// an ability through inheritance the class is composed
-	// with Objects with the right ability
-	
-	// Composition allows you to change the capabilities of 
-	// objects at run time!
+Rather than use an interface in a traditional way, the Strategy Pattern allows us to use an instance variable that is a subclass of the Flys interface.
+
+Class animal doesn't care what flyingType does, it just recognises that the functionality is available to its subclasses
+
+This concept is known as Composition - instead of inheriting an ability through inheritance, we compose the class with Objects which contain the right ability. This then allows the capabilities of objects to be changed at run time.
 	
 	
 
