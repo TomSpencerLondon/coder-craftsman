@@ -16,3 +16,39 @@ This means they can help speed up the development process by as they provide tes
 8. **Iterator pattern** - Provides a way to access the elements of a collection of objects sequentially without exposing its underlying representation.
 
 ## The Strategy Pattern
+
+The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. It enables the algorithm to vary independently from clients that use it. As such, it captures the abstraction in an interface and buries implementation details in derived classes.
+
+Let's explore the Strategy Pattern by looking at an example of some bad code. 
+
+We have Animal.java and Dog.java and Bird.java:
+
+```
+public class Animal {
+	
+	private String name;
+	private double height;
+	private int weight;
+	private String favFood;
+	private double speed;
+	private String sound;
+  
+```
+  // Instead of using an interface in a traditional way
+	// we use an instance variable that is a subclass
+	// of the Flys interface.
+	
+	// Animal doesn't care what flyingType does, it just
+	// knows the behavior is available to its subclasses
+	
+	// This is known as Composition : Instead of inheriting
+	// an ability through inheritance the class is composed
+	// with Objects with the right ability
+	
+	// Composition allows you to change the capabilities of 
+	// objects at run time!
+	
+	
+
+A Strategy defines a set of algorithms that can be used interchangeably.
+
