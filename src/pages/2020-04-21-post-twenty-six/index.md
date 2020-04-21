@@ -21,6 +21,9 @@ and rework your old code when you fi nd it’s degrading into an infl exible mes
 
 ## The Strategy Pattern
 
+![Strategy pattern ](https://user-images.githubusercontent.com/63193195/79912210-91991900-8419-11ea-96a7-04ec2fd48377.jpg)
+
+
 The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. It enables the algorithm to vary independently from clients that use it. As such, it captures the abstraction in an interface and buries implementation details in derived classes.
 
 Let's explore the Strategy Pattern by looking at an example of some bad code. 
