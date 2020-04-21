@@ -39,7 +39,167 @@ Rather than use an interface in a traditional way, the Strategy Pattern allows u
 Class animal doesn't care what flyingType does, it just recognises that the functionality is available to its subclasses
 
 This concept is known as Composition - instead of inheriting an ability through inheritance, we compose the class with Objects which contain the right ability. This then allows the capabilities of objects to be changed at run time.
+
+```
+public Flys flyingType;
 	
+	public void setName(String newName){ name = newName; }
+	public String getName(){ return name; }
+	
+	public void setHeight(double newHeight){ height = newHeight; }
+	public double getHeight(){ return height; }
+	
+	public void setWeight(int newWeight){ 
+		if (newWeight > 0){
+			weight = newWeight; 
+		} else {
+			System.out.println("Weight must be bigger than 0");
+		}
+	}
+	public double getWeight(){ return weight; }
+	
+	public void setFavFood(String newFavFood){ favFood = newFavFood; }
+	public String getFavFood(){ return favFood; }
+	
+	public void setSpeed(double newSpeed){ speed = newSpeed; }
+	public double getSpeed(){ return speed; }
+	
+	public void setSound(String newSound){ sound = newSound; }
+	public String getSound(){ return sound; }
+```
+That's not the rght apporach. We don't want to add new methods to the super class. What we want is to separate what makes subclasses different from the the super class.
+
+```
+	public void fly(){
+		
+		System.out.println("I'm flying");
+		
+	}
+	*/
+	
+	// Animal pushes off the responsibility for flying to flyingType
+	
+	public String tryToFly(){
+		
+		return flyingType.fly();
+		
+	}
+```
+	
+So, if we want you want to be able to change the flyingType dynamically we need to do it using the following approach:
+
+```	
+	public void setFlyingAbility(Flys newFlyType){
+		
+		flyingType = newFlyType;
+		
+	}
+	
+}
+```
+```
+public class Dog extends Animal{
+	
+	public void digHole(){
+		
+		System.out.println("Dug a hole");
+		
+	}
+	
+	public Dog(){
+		
+		super();
+		
+		setSound("Bark");
+		
+		// We set the Flys interface polymorphically
+		// This sets the behavior as a non-flying Animal
+		
+		flyingType = new CantFly();
+		
+	}
+	
+```
+This doesn't quite work either. We need ot make sure to abstract what is different to the subclasses. So we set a constructor to initialise all objects:
+
+```
+	* 
+	public void fly(){
+		
+		System.out.println("I can't fly");
+		
+	}
+	*/
+	
+}
+```
+
+```
+public class Bird extends Animal{
+
+```
+	
+	public Bird(){
+		
+		super();
+		
+		setSound("Tweet");
+		
+```
+We can then set the Flys interface polymorphically to set the behavior as a non-flying Animal:
+
+```
+		
+		flyingType = new ItFlys();
+		
+	}
+	
+}
+```
+
+So then, how do we make Bird.java fly? We need to find a method that continues to abstract out the classes. So we create a Flys interface:
+
+```
+// The interface is implemented by many other
+// subclasses that allow for many types of flying
+// without effecting Animal, or Flys.
+
+// Classes that implement new Flys interface
+// subclasses can allow other classes to use
+// that code eliminating code duplication
+
+// I'm decoupling : encapsulating the concept that varies
+
+public interface Flys {
+	
+   String fly();
+   
+}
+
+// Class used if the Animal can fly
+
+class ItFlys implements Flys{
+
+	public String fly() {
+		
+		return "Flying High";
+		
+	}
+	
+}
+
+//Class used if the Animal can't fly
+
+class CantFly implements Flys{
+
+	public String fly() {
+		
+		return "I can't fly";
+		
+	}
+	
+}
+```
 	
 
 A Strategy defines a set of algorithms that can be used interchangeably.
