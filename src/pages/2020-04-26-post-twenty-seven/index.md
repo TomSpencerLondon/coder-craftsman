@@ -8,3 +8,4 @@ This post will look at the **Observer Pattern**, which enables you to create a o
 
 ## The Observer Pattern
 
+![observer pattern](https://user-images.githubusercontent.com/63193195/80313609-d0e1b400-87e3-11ea-90f9-14184f7f7042.jpg)
