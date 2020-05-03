@@ -1,4 +1,9 @@
-# Design Patterns
+---
+path: "/post-twenty-seven"
+date: "2020-04-17"
+title: "Observer Pattern"
+author: "Tom Spencer"
+---
 
 This is the second blog post in a series on Design Patterns, in which we're looking at some of the most helpful design patterns for your software design.
 

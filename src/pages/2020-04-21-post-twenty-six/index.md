@@ -1,4 +1,9 @@
-# Design Patterns
+---
+path: "/post-twenty-six"
+date: "2020-04-17"
+title: "Design Patterns"
+author: "Tom Spencer"
+---
 
 Welcome to the first in a new blogs series on Design Patterns, in which we'll look at some of the most helpful design patterns, their use and benefits, so that you can use them in your software design.
 
