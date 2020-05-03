@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Layout from "../components/layout"
 
-export default function Template({data}) {
+export default function BlogPostTemplate({data}) {
   const post = data.markdownRemark
 
   return(
