@@ -84,4 +84,4 @@ Its role here here is to saveToFile.
 
 As we can see, in each of these cases each class has a single responsibility. As such the code is easier to maintain. If we needed to change some of the formatting at a future point, we would not need to change the class as the responsibilities are separated out.
 
-In the next blog we will look at the Open/Closed Principle.
+In the next blog we will look at the [Open/Closed Principle](https://crafter-coder.xyz/post-twenty-two).
