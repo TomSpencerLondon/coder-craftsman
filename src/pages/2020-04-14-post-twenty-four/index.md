@@ -5,7 +5,7 @@ title: "Interface Segregation Principle"
 author: "Tom Spencer"
 ---
 
-This is the fourth in a series of five blogs on the SOLID Design Principles. Read the blog on the previous principle, the Liskov Substitution Principle here.
+This is the fourth in a series of five blogs on the SOLID Design Principles. Read the blog on the previous principle, the [Liskov Substitution Principle](https://crafter-coder.xyz/post-twenty-three).
 
 The **Interface Segregation Principle** states that no client should be forced to depend on methods it does not use.
 
@@ -201,4 +201,4 @@ public class Isp {
 ```
 We can now see that we have a document and all the different devices. We can then use Print on each class or alternatively use the MultiFunctionMachine to call InternetFax to feed in all the classes and then print the document how we want.
 
-The next blog is on the Dependency Inversion, the final SOLID principle. 
+The next blog is on the [Dependency Inversion Principle](https://crafter-coder.xyz/post-twenty-five), the final SOLID principle. 

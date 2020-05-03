@@ -1,11 +1,7 @@
----
-path: "/post-twenty-two"
-date: "2020-04-16"
-title: "Open Closed Principle"
-author: "Tom Spencer"
----
+# The Open Closed Principle #
 
-This is the second in a series of five blogs on the SOLID Design Principles. Read about the first principle, the Single responsibility principle here [title](https://www.example.com)
+
+This is the second in a series of five blogs on the SOLID Design Principles. Read about the first principle, the [Single responsibility principle](https://crafter-coder.xyz/post-twenty-one).
 
 The **Open Closed Principle** states that software entities should be open for extension, but closed for modification.
 
@@ -194,4 +190,4 @@ public class Ocp {
   ```
 We have made sure our code is compliant with the Open Closed principle by using inheritance and implementing interfaces that enable classes to polymorphically substitute for each other.
 
-The next principle is the Liskov substitution principle, read the blog here. 
+The next principle is the [Liskov substitution principle](https://crafter-coder.xyz/post-twenty-three).

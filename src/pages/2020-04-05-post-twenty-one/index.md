@@ -9,11 +9,11 @@ This is the first in a series of five blogs on the SOLID Design Principles. Thes
 
 ### SOLID is a mnemonic  which stands for:
 
-- **Single Responsibility Principle** (which states that every module or class should have responsibility over one part of the functionality the software provides).
-- **Open/Closed Principle** (which states that software entities should be open for extensions, but closed for modification).
-- **Liskov Substitution** Principle (which states that objects in a programme should be replaceable with instances of their subtypes without altering the correctness of that programme).
-- **Interface Segregation Principle** (which states that no additional functionality should be added to an existing interface through new methods).
-- **Dependency Inversion Principle** (which states that modules should depend on abstractions).
+- [**Single Responsibility Principle**](https://crafter-coder.xyz/post-twenty-one) (which states that every module or class should have responsibility over one part of the functionality the software provides).
+- [**Open/Closed Principle**](https://crafter-coder.xyz/post-twenty-two) (which states that software entities should be open for extensions, but closed for modification).
+- [**Liskov Substitution**](https://crafter-coder.xyz/post-twenty-three) Principle (which states that objects in a programme should be replaceable with instances of their subtypes without altering the correctness of that programme).
+- [**Interface Segregation Principle**](https://crafter-coder.xyz/post-twenty-four) (which states that no additional functionality should be added to an existing interface through new methods).
+- [**Dependency Inversion Principle**](https://crafter-coder.xyz/post-twenty-five) (which states that modules should depend on abstractions).
 
 #### We will start by looking at the Single Responsibility Principle. 
 
@@ -84,4 +84,4 @@ Its role here here is to saveToFile.
 
 As we can see, in each of these cases each class has a single responsibility. As such the code is easier to maintain. If we needed to change some of the formatting at a future point, we would not need to change the class as the responsibilities are separated out.
 
-In the next blog we will look at the Open/Closed Principle.
+In the next blog we will look at the [Open/Closed Principle](https://crafter-coder.xyz/post-twenty-two).
