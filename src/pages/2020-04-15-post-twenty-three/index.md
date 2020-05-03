@@ -1,11 +1,6 @@
----
-path: "/post-twenty-three"
-date: "2020-04-15"
-title: "Liskov Substitution"
-author: "Tom Spencer"
----
+# The Liskov substitution principle #
 
-This is the second in a series of five blogs on the SOLID Design Principles. Read about the first principle, the Single responsibility principle here [title](https://www.example.com), and the second - the Open-closed principle here. 
+This is the third in a series of five blogs on the SOLID Design Principles. Read about the second principle, the [Open Closed Principle](https://crafter-coder.xyz/post-twenty-two).
 
 The **Liskov substitution principle** states that objects in a programme should be replaceable with instances of their subtypes without altering the correctness of that programme.
 
@@ -108,4 +103,4 @@ So we can see that through our showArea method this becomes clear.
 
 As we have seen LSP enables us to replace objects in a programme with instances of their subtype without altering the correctness of that programme.
 
-Next we will look at the Interface segregation principle. 
+Next we will look at the [Interface Segregation Principle](https://crafter-coder.xyz/post-twenty-four). 
