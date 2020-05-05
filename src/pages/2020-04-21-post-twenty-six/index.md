@@ -18,11 +18,12 @@ and rework your old code when you fi nd it’s degrading into an infl exible mes
 ### In this blog series we will cover the following design patterns:
 1. **The Strategy Pattern** - Defines a family of algorithms, encapsulates them and makes them interchangeable.
 2. **Observer Pattern** - A one-to-many dependency where a change in one object results in automatic notification and change in the other objects.
-4. **Factory**
-5. **Singleton** - Ensures a class has only a single instance and provides a global point of access to it.
-6. **Command** - Encapsulates a command request as an object.
-7. **Adapter and facade** - Converts the interface of a class into another interface, thereby matching interfaces of different classes. 
-8. **Iterator pattern** - Provides a way to access the elements of a collection of objects sequentially without exposing its underlying representation.
+4. **Decorator Pattern** which attaches additional responsibilities to an object dynamically.
+5. **Factory**
+6. **Singleton** - Ensures a class has only a single instance and provides a global point of access to it.
+7. **Command** - Encapsulates a command request as an object.
+8. **Adapter and facade** - Converts the interface of a class into another interface, thereby matching interfaces of different classes. 
+9. **Iterator pattern** - Provides a way to access the elements of a collection of objects sequentially without exposing its underlying representation.
 
 ## The Strategy Pattern
 
