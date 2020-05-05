@@ -198,4 +198,5 @@ AX  AXY  AXYZ
 
 So there we have it, a method to attach additional responsibilities to an object dynamically and a flexible alternative to subclassing to extending functionality.
 
-Our next blog looks at the **Factory Pattern**, which handles object creation and encapsulates it in a subclass, decoupling it from the client code in the superclass from the object creation code in the subclass.
+Our next blog looks at the **Factory Pattern**, which defines an interface for creating an object, letting subclasses decide which
+class to instantiate. 
