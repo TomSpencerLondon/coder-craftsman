@@ -6,6 +6,9 @@ The last post covered, the **Observer Pattern**,
 
 This post will look at the **Decorator Pattern**, which attaches additional responsibilities to an object dynamically, enabling you to extend functionality by providing a flexible alternative to subclassing.
 
+![Decorator pattern](https://user-images.githubusercontent.com/63193195/81114853-aea21180-8f1a-11ea-9278-8f58362eb6bb.jpg)
+
+
 By using this pattern you can "decorate" you classes at runtime using a form of object composition. This means you can give your (or someone else’s) objects new responsibilities without having to change any of the code for the underlying classes.
 
 **So, how does the Decorator Pattern work?** 
