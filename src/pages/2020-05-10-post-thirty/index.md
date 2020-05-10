@@ -6,6 +6,11 @@ The last post covered, the **Factory Method Pattern**, which which defines an in
 
 The **Singleton Patter** 
 
+![Singleton](https://user-images.githubusercontent.com/63193195/81503672-d4456700-92dc-11ea-90ed-e936fc76d866.jpg)
+
+
+
+
 The Singleton Pattern ensures a class has only one
 instance, and provides a global point of access to it.
 
