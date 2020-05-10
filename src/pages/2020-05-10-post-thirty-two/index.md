@@ -6,7 +6,7 @@ The last post covered, the **Command Pattern** which encapsulates a command requ
 
 This blog looks at the Adapter and Facade Pattern, whcih converts the interface of a class into another interface, thereby matching interfaces of different classes.
 
-https://github.com/TomSpencerLondon/coder-craftsman/issues/14#issue-615422279
+![adaptor and facade](https://user-images.githubusercontent.com/63193195/81504237-0ad0b100-92e0-11ea-965d-dfbff0834bdc.jpg)
 
 
 
