@@ -4,8 +4,7 @@ This is the fourth blog post in a series on Design Patterns, in which we're look
 
 The last post covered, the **Decorator Pattern**, which attaches additional responsibilities to an object dynamically, enabling you to extend functionality by providing a flexible alternative to subclassing.
 
-This post will look at the **Factory Method Pattern**, which which defines an interface for creating an object, letting subclasses decide which
-class to instantiate. 
+This post will look at the **Factory Method Pattern**, which which defines an interface for creating an object, letting subclasses decide which class to instantiate. 
 
 ![factory pattern](https://user-images.githubusercontent.com/63193195/81115292-62a39c80-8f1b-11ea-8179-a4080e0033aa.jpg)
 
