@@ -1,48 +1,43 @@
-# The Factory Pattern #
+# The Factory Method Pattern #
 
 This is the fourth blog post in a series on Design Patterns, in which we're looking at some of the most helpful design patterns for your software design.
 
-The last post covered, the **Decorator Pattern**,
+The last post covered, the **Decorator Pattern**, which attaches additional responsibilities to an object dynamically, enabling you to extend functionality by providing a flexible alternative to subclassing.
 
-This post will look at the **Factory Pattern**, which which defines an interface for creating an object, letting subclasses decide which
+This post will look at the **Factory Method Pattern**, which which defines an interface for creating an object, letting subclasses decide which
 class to instantiate. 
 
 ![factory pattern](https://user-images.githubusercontent.com/63193195/81115292-62a39c80-8f1b-11ea-8179-a4080e0033aa.jpg)
 
-As with every factory, the Factory Method Pattern gives us a way to encapsulate the
-instantiations of concrete types. Looking at the class diagram below, you can see that the
-abstract Creator gives you an interface with a method for creating objects, also known as the
-“factory method.” Any other methods implemented in the abstract Creator are written to
-operate on products produced by the factory method. Only subclasses actually implement
-the factory method and create products.
-As in the offi cial defi nition, you’ll often hear developers say that the Factory Method lets
-subclasses decide which class to instantiate. They say “decides” not because the pattern
-allows subclasses themselves to decide at runtime, but because the creator class is written
-without knowledge of the actual products that will be created, which is decided purely by
-the choice of the subclass that is used
-The Simple Factory isn’t actually a Design Pattern; it’s more of a programming idiom.
-But it is commonly used, so we’ll give it a Head First Pattern Honorable Mention.
-Some developers do mistake this idiom for the “Factory Pattern,” so the next time
-there is an awkward silence between you and another developer, you’ve got a nice
-topic to break the ice.
-Just because Simple Factory isn’t a REAL pattern doesn’t mean we shouldn’t check out
-how it’s put together. Let’s take a look at the class diagram of our new Pizza Store:
+The Factory Method Pattern enables you to establish an interface for creating objects in a superclass, but also allows subclasses to alter the type of objects that will be created. The creation logic for objects is hidden and the newly created object is returned to the client using either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes (using a common interface).
 
-a creational pattern that uses factory methods for creating objects without specifying the exact class of object that is created. In factory method pattern the object creation logic is hidden and the newly created object is returned to the client using either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes (using a common interface).
+Factory Method makes a design more customisable and can add more complexity. Whereas other design patterns require new classes, it requires a new operation.
 
-factory method is
-abstract so the subclasses
-are counted on to handle
-object creation.
-A factory method may be
-parameterized (or not)
-to select among several
-variations of a product.
-A factory method isolates the client (the
-code in the superclass, like orderPizza())
-from knowing what kind of concrete
-Product is actually created.
-A factory method returns
-a Product that is typically
-used within methods defined
-in the superclass.
+Scheme of Factory Method
+
+Factory Methods are routinely specified by an architectural framework, and then implemented by the user of the framework.
+It therefore enables a static method of a class that returns an object of that class' type, but unlike a constructor, the actual object it returns might be an instance of a subclass and an existing object can be reused, instead of creating a new objec. Factory methods can have different and descriptive names (e.g. Color.make_RGB_color(float red, float green, float blue) and Color.make_HSB_color(float hue, float saturation, float brightness)
+
+Let's look at an example from the world of toys. Manufacturers of plastic toys process plastic moulding powder, and inject the plastic into moulds of the toy shape. The class of toy (car, action figure, etc.) is determined by the mould.
+
+Check list If you have an inheritance hierarchy that exercises polymorphism, consider adding a polymorphic creation capability by defining a static factory method in the base class. Design the arguments to the factory method. What qualities or characteristics are necessary and sufficient to identify the correct derived class to instantiate? Consider designing an internal "object pool" that will allow objects to be reused instead of created from scratch. Consider making all constructors private or protected. Rules of thumb Abstract Factory classes are often implemented with Factory Methods, but they can be implemented using Prototype. Factory Methods are usually called within Template Methods. Factory Method: creation through inheritance. Prototype: creation through delegation. Often, designs start out using Factory Method (less complicated, more customizable, subclasses proliferate) and evolve toward Abstract Factory, Prototype, or Builder (more flexible, more complex) as the designer discovers where more flexibility is needed. Prototype doesn't require subclassing, but it does require an Initialize operation. Factory Method requires subclassing, but doesn't require Initialize. The advantage of a Factory Method is that it can return the same instance multiple times, or can return a subclass rather than an object of that exact type. Some Factory Method advocates recommend that as a matter of language design (or failing that, as a matter of style) absolutely all constructors should be private or protected. It's no one else's business whether a class manufactures a new object or recycles an old one. The new operator considered harmful. There is a difference between requesting an object and creating one. The new operator always creates an object, and fails to encapsulate object creation. A Factory Method enforces that encapsulation, and allows an object to be requested without inextricable coupling to the act of creation.
+
+Abstract Factory Design Pattern Intent Provide an interface for creating families of related or dependent objects without specifying their concrete classes. A hierarchy that encapsulates: many possible "platforms", and the construction of a suite of "products". The new operator considered harmful. Problem If an application is to be portable, it needs to encapsulate platform dependencies. These "platforms" might include: windowing system, operating system, database, etc. Too often, this encapsulation is not engineered in advance, and lots of #ifdef case statements with options for all currently supported platforms begin to procreate like rabbits throughout the code.
+
+Discussion Provide a level of indirection that abstracts the creation of families of related or dependent objects without directly specifying their concrete classes. The "factory" object has the responsibility for providing creation services for the entire platform family. Clients never create platform objects directly, they ask the factory to do that for them.
+
+This mechanism makes exchanging product families easy because the specific class of the factory object appears only once in the application - where it is instantiated. The application can wholesale replace the entire family of products simply by instantiating a different concrete instance of the abstract factory.
+
+Because the service provided by the factory object is so pervasive, it is routinely implemented as a Singleton.
+
+Structure The Abstract Factory defines a Factory Method per product. Each Factory Method encapsulates the new operator and the concrete, platform-specific, product classes. Each "platform" is then modeled with a Factory derived class.
+
+Scheme of Abstract Factory
+
+Example The purpose of the Abstract Factory is to provide an interface for creating families of related objects, without specifying concrete classes. This pattern is found in the sheet metal stamping equipment used in the manufacture of Japanese automobiles. The stamping equipment is an Abstract Factory which creates auto body parts. The same machinery is used to stamp right hand doors, left hand doors, right front fenders, left front fenders, hoods, etc. for different models of cars. Through the use of rollers to change the stamping dies, the concrete classes produced by the machinery can be changed within three minutes.
+
+Example of Abstract Factory
+
+Check list Decide if "platform independence" and creation services are the current source of pain. Map out a matrix of "platforms" versus "products". Define a factory interface that consists of a factory method per product. Define a factory derived class for each platform that encapsulates all references to the new operator. The client should retire all references to new, and use the factory methods to create the product objects. Rules of thumb Sometimes creational patterns are competitors: there are cases when either Prototype or Abstract Factory could be used profitably. At other times they are complementary: Abstract Factory might store a set of Prototypes from which to clone and return product objects, Builder can use one of the other patterns to implement which components get built. Abstract Factory, Builder, and Prototype can use Singleton in their implementation. Abstract Factory, Builder, and Prototype define a factory object that's responsible for knowing and creating the class of product objects, and make it a parameter of the system. Abstract Factory has the factory object producing objects of several classes. Builder has the factory object building a complex product incrementally using a correspondingly complex protocol. Prototype has the factory object (aka prototype) building a product by copying a prototype object. Abstract Factory classes are often implemented with Factory Methods, but they can also be implemented using Prototype. Abstract Factory can be used as an alternative to Facade to hide platform-specific classes. Builder focuses on constructing a complex object step by step. Abstract Factory emphasizes a family of product objects (either simple or complex). Builder returns the product as a final step, but as far as the Abstract Factory is concerned, the product gets returned immediately. Often, designs start out using Factory Method (less complicated, more customizable, subclasses proliferate) and evolve toward Abstract Factory, Prototype, or Builder (more flexible, more complex) as the designer discovers where more flexibility is needed.
+
+Abstract Factory in Java
