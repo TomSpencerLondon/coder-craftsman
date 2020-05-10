@@ -8,6 +8,61 @@ This blog looks at the Adapter and Facade Pattern, whcih converts the interface 
 
 ![adaptor and facade](https://user-images.githubusercontent.com/63193195/81504237-0ad0b100-92e0-11ea-965d-dfbff0834bdc.jpg)
 
+
+The Adapter Pattern converts the interface of a class
+into another interface the clients expect. Adapter lets
+classes work together that couldn’t otherwise because of
+incompatible interfaces.
+
+In this chapter we’re going to attempt such impossible feats as
+putting a square peg in a round hole. Sound impossible? Not when we have
+Design Patterns. Remember the Decorator Pattern? We wrapped objects to give them new
+responsibilities. Now we’re going to wrap some objects with a different purpose: to make their
+interfaces look like something they’re not. Why would we do that? So we can adapt a design
+expecting one interface to a class that implements a different interface. That’s not all; while
+we’re at it, we’re going to look at another pattern that wraps objects to simplify their interface.
+
+You know what the adapter does: it sits in between the plug of your laptop and the
+European AC outlet; its job is to adapt the European outlet so that you can plug your
+laptop into it and receive power. Or look at it this way: the adapter changes the interface
+of the outlet into one that your laptop expects.
+Some AC adapters are simple – they only change the shape of the outlet so that it matches
+your plug, and they pass the AC current straight through – but other adapters are more
+complex internally and may need to step the power up or down to match your devices’
+needs.
+
+Facade is just what you need: with the Facade Pattern you can take a complex
+subsystem and make it easier to use by implementing a Facade class that
+provides one, more reasonable interface. Don’t worry; if you need the power
+of the complex subsystem, it’s still there for you to use, but if all you need is a
+straightforward interface, the Facade is there for you.
+
+A facade not
+only simplifies
+an interface, it
+decouples a client
+from a subsystem
+of components.
+Facades and
+adapters may
+wrap multiple
+classes, but a
+facade’s intent is
+to simplify, while
+an adapter’s
+is to convert
+the interface
+to something
+different.
+facade versus adapter
+Download at
+Okay, that’s the real world, what about object oriented adapters? Well, our OO adapters
+play the same role as their real world counterparts: they take an interface and adapt it to
+one that a client is expecting.
+
+The adapter acts as the middleman by receiving requests from the client and converting
+them into requests that make sense on the vendor classes.
+
 Intent
 Convert the interface of a class into another interface clients expect. Adapter lets classes work together that couldn't otherwise because of incompatible interfaces.
 Wrap an existing class with a new interface.
