@@ -8,29 +8,33 @@ The **Command Pattern** encapsulates a command request as an object.
 
 ![command pattern](https://user-images.githubusercontent.com/63193195/81503957-7fa2eb80-92de-11ea-8ea5-276f3306829c.jpg)
 
-Command Design Pattern Intent Encapsulate a request as an object, thereby letting you parametrize clients with different requests, queue or log requests, and support undoable operations. Promote "invocation of a method on an object" to full object status An object-oriented callback Problem Need to issue requests to objects without knowing anything about the operation being requested or the receiver of the request.
+By encapsulating a request as an object you can parametrise clients with different requests, queue or log requests, and support undoable operations. 
 
-Discussion Command decouples the object that invokes the operation from the one that knows how to perform it. To achieve this separation, the designer creates an abstract base class that maps a receiver (an object) with an action (a pointer to a member function). The base class contains an execute() method that simply calls the action on the receiver.
+For example, the bill you receive at a restaurant is like a Command Pattern. The waiter or waitress takes an order or command from a customer and encapsulates that order by adding it to the bill. The order is then queued for serving. Note that the pad of "bills" used by each waiter is not dependent on the menu, and therefore they can support commands to cook many different items.
 
-All clients of Command objects treat each object as a "black box" by simply invoking the object's virtual execute() method whenever the client requires the object's "service".
+A command object encapsulates a request by binding together a set of actions on a specific receiver. In order to do this, it packages the actions and the receiver up into an object that exposes just one method, execute().
+
+When called, execute() causes the actions to be invoked on the receiver. From the outside, no other objects really know what
+actions get performed on what receiver; all they know is that they when they call the execute() method, their request will be serviced.
+
+### How to use the Command Pattern ###
+
+So, the Command Pattern decouples the object that invokes the operation from the one that knows how to perform it. To achieve this separation, the designer creates an abstract base class that maps a receiver (an object) with an action (a pointer to a member function). The base class contains an execute() method that simply calls the action on the receiver.
+
+Clients of Command objects treat each object as a "black box" by simply invoking the object's virtual execute() method whenever the client requires the object's "service".
 
 A Command class holds some subset of the following: an object, a method to be applied to the object, and the arguments to be passed when the method is applied. The Command's "execute" method then causes the pieces to come together.
 
-Sequences of Command objects can be assembled into composite (or macro) commands.
+The client that creates a command is not the same client that executes it. This separation provides flexibility in how you time and sequence of commands, and making commands objects, enables you to pass, stage, share, load in a table, and otherwise use them like any other object.
 
-Structure The client that creates a command is not the same client that executes it. This separation provides flexibility in the timing and sequencing of commands. Materializing commands as objects means they can be passed, staged, shared, loaded in a table, and otherwise instrumented or manipulated like any other object.
+To make use of Command:
 
-Command scheme
+- You need to define a Command interface with a method signature like execute(). 
+- Then create one or more derived classes that encapsulate some a subset such as a "receiver" object, the method to invoke, the arguments to pass. 
+- You then instantiate a Command object for each deferred execution request, passing the Command object from the creator to the invoker.
+- The invoker decides when to execute(). 
 
-Command objects can be thought of as "tokens" that are created by one client that knows what need to be done, and passed to another client that has the resources for doing it.
-
-Example The Command pattern allows requests to be encapsulated as objects, thereby allowing clients to be parametrized with different requests. The "check" at a diner is an example of a Command pattern. The waiter or waitress takes an order or command from a customer and encapsulates that order by writing it on the check. The order is then queued for a short order cook. Note that the pad of "checks" used by each waiter is not dependent on the menu, and therefore they can support commands to cook many different items.
-
-Command example
-
-Check list Define a Command interface with a method signature like execute(). Create one or more derived classes that encapsulate some subset of the following: a "receiver" object, the method to invoke, the arguments to pass. Instantiate a Command object for each deferred execution request. Pass the Command object from the creator (aka sender) to the invoker (aka receiver). The invoker decides when to execute(). Rules of thumb Chain of Responsibility, Command, Mediator, and Observer, address how you can decouple senders and receivers, but with different trade-offs. Command normally specifies a sender-receiver connection with a subclass. Chain of Responsibility can use Command to represent requests as objects. Command and Memento act as magic tokens to be passed around and invoked at a later time. In Command, the token represents a request; in Memento, it represents the internal state of an object at a particular time. Polymorphism is important to Command, but not to Memento because its interface is so narrow that a memento can only be passed as a value. Command can use Memento to maintain the state required for an undo operation. MacroCommands can be implemented with Composite. A Command that must be copied before being placed on a history list acts as a Prototype. Two important aspects of the Command pattern: interface separation (the invoker is isolated from the receiver), time separation (stores a ready-to-go processing request that's to be stated later).
-
-Command in Java: Decoupling producer from consumer
+So, looking at Command in jave, we can decouple a producer from a consumer:
 
 ```
 interface Command {
@@ -82,3 +86,8 @@ take out the trash
 take money from the rich, take votes from the poor
 sell the bugs, charge extra for the fixes
 ```
+Don't forget that Commands give us a way to package a piece of computation (a receiver and a set of actions) and pass it around as a first-class object. The computation itself may be invoked long after some client application creates the command object and may even be be invoked by a different thread. So we can take this scenario and apply it to many useful applications such as schedulers, thread pools
+and job queues, to name a few. These are just some of the mnay ways Command is useful to us.
+
+The next blog in the series will look at the **Adapter and Facade Pattern**, whcih converts the interface of a class into another interface, thereby matching interfaces of different classes.
+
