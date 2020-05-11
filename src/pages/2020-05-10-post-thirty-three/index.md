@@ -4,23 +4,13 @@ This is the eighth and final blog post in a series on Design Patterns, in which 
 
 The last post covered, the **Adapter and Facade Pattern**, which converts the interface of a class into another interface, thereby matching interfaces of different classes.
 
-The **Iterator Pattern** - Provides a way to access the elements of a collection of objects sequentially without exposing its underlying representation.
+The **Iterator Pattern** provides a way to access the elements of a collection of objects sequentially without exposing its underlying representation.
 
 ![iterator](https://user-images.githubusercontent.com/63193195/81504508-9bf45780-92e1-11ea-893e-b742837a3c5b.jpg)
 
-Iterator Design Pattern
-Intent
-Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
-The C++ and Java standard library abstraction that makes it possible to decouple collection classes and algorithms.
-Promote to "full object status" the traversal of a collection.
-Polymorphic traversal
-Problem
-Need to "abstract" the traversal of wildly different data structures so that algorithms can be defined that are capable of interfacing with each transparently.
+An aggregate object such as a list should give you a way to access its elements without exposing its internal structure. Moreover, you might want to traverse the list in different ways, depending on what you need to accomplish. You might also need to have more than one traversal pending on the same list and provide a uniform interface for traversing many types of aggregate objects (i.e. polymorphic iteration) might be valuable.
 
-Discussion
-"An aggregate object such as a list should give you a way to access its elements without exposing its internal structure. Moreover, you might want to traverse the list in different ways, depending on what you need to accomplish. But you probably don't want to bloat the List interface with operations for different traversals, even if you could anticipate the ones you'll require. You might also need to have more than one traversal pending on the same list." And, providing a uniform interface for traversing many types of aggregate objects (i.e. polymorphic iteration) might be valuable.
-
-The Iterator pattern lets you do all this. The key idea is to take the responsibility for access and traversal out of the aggregate object and put it into an Iterator object that defines a standard traversal protocol.
+As we've said, Iterator allows traversal of the elements of an aggregate without exposing the underlying implementation. It also places the task of traversal on the iterator object, not on the aggregate, making the aggregate interface and implementation simpler and placing the responsibility where it should be. The key idea is to take the responsibility for access and traversal out of the aggregate object and put it into an Iterator object that defines a standard traversal protocol.
 
 The Iterator abstraction is fundamental to an emerging technology called "generic programming". This strategy seeks to explicitly separate the notion of "algorithm" from that of "data structure". The motivation is to: promote component-based development, boost productivity, and reduce configuration management.
 
