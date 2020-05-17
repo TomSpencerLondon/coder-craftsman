@@ -2,14 +2,13 @@
 
 This is the third blog post in a series on Design Patterns, in which we're looking at some of the most helpful design patterns for your software design.
 
-The last post covered, the **Observer Pattern**,
+The last post covered, the **Observer Pattern**, which enables you to create a one-to-many dependency where a change in one object results in automatic notification and change in the other objects.
 
 This post will look at the **Decorator Pattern**, which attaches additional responsibilities to an object dynamically, enabling you to extend functionality by providing a flexible alternative to subclassing.
 
 ![Decorator pattern](https://user-images.githubusercontent.com/63193195/81114853-aea21180-8f1a-11ea-9278-8f58362eb6bb.jpg)
 
-
-By using this pattern you can "decorate" you classes at runtime using a form of object composition. This means you can give your (or someone else’s) objects new responsibilities without having to change any of the code for the underlying classes.
+By using this pattern you can "decorate" your classes at runtime using a form of object composition. This means you can give your (or someone else’s) objects new responsibilities without having to change any of the code for the underlying classes.
 
 **So, how does the Decorator Pattern work?** 
 
@@ -19,8 +18,9 @@ By using this pattern you can "decorate" you classes at runtime using a form of 
 - The decorator adds its own behavior before and/or after delegating to the object it's decorating to do the rest of the job.
 - You can decorate objects at any time, including dynamically at runtime with as many decorators as we like.
 
-For example, the ornaments that are added to pine or fir trees are examples of Decorators. Lights, garland, candy canes, glass ornaments, etc., can be added to a tree to give it a festive look. The ornaments do not change the tree itself which is recognizable as a Christmas tree regardless of particular ornaments used. As an example of additional functionality, the addition of lights allows one to &quot;light up&quot; a Christmas tree.</p>
-<p>Another example: assault gun is a deadly weapon on it's own. But you can apply certain &quot;decorations&quot; to make it more accurate, silent and devastating.</p>
+For example, the ornaments that are added to Christmas trees are examples of Decorators. Lights, baubles, glass ornaments, etc., can be added to a tree to give it a festive look. The ornaments do not change the tree itself which is recognisable as a Christmas tree regardless of particular ornaments used. As an example of additional functionality, the addition of lights allows one to &quot;light up&quot; a Christmas tree.
+
+Another example is an assault gun, it's is a deadly weapon on it's own,but you can apply certain &quot;decorations&quot; to make it more accurate, silent and devastating.
 
 So let's take a look at it in action. 
 
@@ -198,5 +198,4 @@ AX  AXY  AXYZ
 
 So there we have it, a method to attach additional responsibilities to an object dynamically and a flexible alternative to subclassing to extending functionality.
 
-Our next blog looks at the **Factory Pattern**, which defines an interface for creating an object, letting subclasses decide which
-class to instantiate. 
+Our next blog looks at the **Factory Pattern**, which defines an interface for creating an object, letting subclasses decide which class to instantiate. 
