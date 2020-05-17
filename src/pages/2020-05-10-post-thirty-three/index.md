@@ -14,30 +14,20 @@ The key idea with the Iterator is to take the responsibility for access and trav
 
 The Iterator abstraction is fundamental to an emerging technology called "generic programming", which seeks to explicitly separate the notion of "algorithm" from that of "data structure". The idea behind it is to promote component-based development, boost productivity, and reduce configuration management.
 
-Structure
-The Client uses the Collection class' public interface directly. But access to the Collection's elements is encapsulated behind the additional level of abstraction called Iterator. Each Collection derived class knows which Iterator derived class to create and return. After that, the Client relies on the interface defined in the Iterator base class.
+**Using the iterator**
 
-Iterator example
+The Client uses the Collection class' public interface directly, with access to the Collection's elements encapsulated behind the additional level of abstraction called Iterator. Each Collection derived class knows which Iterator derived class to create and return. After that, the Client relies on the interface defined in the Iterator base class.
 
-Example
+To make use of the Iterator, you need to add a create_iterator() method to the "collection" class, and grant the "iterator" class privileged access. Design an "iterator" class that can encapsulate traversal of the "collection" class.
+
+Clients ask the collection object to create an iterator object. Clients use the first(), is_done(), next(), and current_item() protocol to access the elements of the collection class.
 
 
-Iterator example
 
-Check list
-Add a create_iterator() method to the "collection" class, and grant the "iterator" class privileged access.
-Design an "iterator" class that can encapsulate traversal of the "collection" class.
-Clients ask the collection object to create an iterator object.
-Clients use the first(), is_done(), next(), and current_item() protocol to access the elements of the collection class.
-Rules of thumb
-The abstract syntax tree of Interpreter is a Composite (therefore Iterator and Visitor are also applicable).
-Iterator can traverse a Composite. Visitor can apply an operation over a Composite.
-Polymorphic Iterators rely on Factory Methods to instantiate the appropriate Iterator subclass.
-Memento is often used in conjunction with Iterator. An Iterator can use a Memento to capture the state of an iteration. The Iterator stores the Memento internally.
+Let's take a look at the Iterator in Java, before and after. 
 
-Iterator in Java: Before and after
-Before
-The class SomeClassWithData provides access to its internal data structure. Clients can accidentally or maliciously trash that data structure.
+Without Iterator the class SomeClassWithData provides access to its internal data structure. Clients can accidentally or maliciously trash that data structure.
+
 ```
 class IntegerBox {
     private final List<Integer> list = new ArrayList<>();
@@ -73,8 +63,8 @@ Output
 size of data is 0
 
 ```
-After
-Take traversal-of-a-collection functionality out of the collection and promote it to "full object status". This simplifies the collection, allows many traversals to be active simultaneously, and decouples collection algorithms from collection data structures.
+If we use Iterator, we take traversal-of-a-collection functionality out of the collection and promote it to "full object status". This simplifies the collection, allows many traversals to be active simultaneously, and decouples collection algorithms from collection data structures.
+
 ```
 class IntegerBox {
     private List<Integer> list = new ArrayList<>();
@@ -145,3 +135,4 @@ Output
 9  8  7  6  5  4  3  2  1
 9 9  8 8  7 7  6 6  5 5  4 4  3 3  2 2  1 1
 ```
+Polymorphic Iterators rely on Factory Methods to instantiate the appropriate Iterator subclass. Memento is often used in conjunction with Iterator. An Iterator can use a Memento to capture the state of an iteration. The Iterator stores the Memento internally.
