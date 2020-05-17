@@ -8,7 +8,7 @@ The **Iterator Pattern** provides a way to access the elements of a collection o
 
 ![iterator](https://user-images.githubusercontent.com/63193195/81504508-9bf45780-92e1-11ea-893e-b742837a3c5b.jpg)
 
-The Iterator provides ways to access elements of an aggregate object sequentially without exposing the underlying structure of the object. It can be compared with a filing symstem in an office, where the adminstrator creates a set up they understand and can naigate to find the file another member of the office is looking for - they are the "iterator" in this setting. 
+The Iterator provides ways to access elements of an aggregate object sequentially without exposing the underlying structure of the object. It can be compared with a filing system in an office, where the adminstrator creates a set up they understand and can navigate to find the file another member of the office is looking for - they are the "Iterator" in this setting. Whilst the colleague isn't able to understand and therefore find what they need, the "Iterator" fully understands the system and can quickly and efficiently find the file they're looking for. 
 
 The key idea with the Iterator is to take the responsibility for access and traversal out of the aggregate object and put it into an Iterator object, defining a standard traversal protocol. Given that the task of traversal is placed on the iterator object, rather than the aggregate, the aggregate interface and implementation is simpler as responsibility is placed where it should be. 
 
