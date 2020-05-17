@@ -13,12 +13,9 @@ So looking at the Adapter Pattern first. It's a method which converts the interf
 Hence the name "adapter" - it functions in the way an adapter you take on holiday with you functions - it adapts the plug on a device to a foreign plug socket of another shape. Or in other words, the adapter changes the interface of the outlet into one that your device expects and can use. 
 
 Or imagine it as fitting a square peg in a round hole. Like the Decorator Pattern, where we wrapped objects to give them new
-responsibilities. Adapter let's us wrap some objects with a different purpose: to make their interfaces look like something they’re not. 
-It means we can adapt a design expecting one interface to a class that implements a different interface. T
+responsibilities, Adapter let's us wrap some objects with a different purpose: to make their interfaces look like something they’re not. It means we can adapt a design expecting one interface to a class that implements a different interface. 
 
-Coming onto Facade. Whilst some plug AC adapters are simple, only changing the shape of the socket so that it matches your plug, other have more complexity internally and may need to alter the power to suit your device. With the Facade Pattern you can take a complex
-subsystem and make it easier to use by implementing a Facade class that provides one, more reasonable interface. 
-straightforward interface, the Facade is there for you. What's more, a Facade not only simplifies an interface, it decouples a client from a subsystem of components.
+Coming onto Facade. Whilst some plug AC adapters are simple, only changing the shape of the socket so that it matches your plug, others have more complexity internally and may need to alter the power to suit your device. With the Facade Pattern you can take a complex subsystem and make it easier to use by implementing a Facade class that provides one, more reasonable interface. What's more, a Facade not only simplifies an interface, it decouples a client from a subsystem of components.
 
 To clarify the difference, Facades and Adapters wrap multiple classes, but a Facade’s intent is to simplify, while an Adapter’s is to convert the interface into something different.
 
@@ -26,11 +23,12 @@ Putting it into the world of Object Orientated coding, an Adapter receives reque
 
 Adapters lets classes work together that couldn't otherwise, including wrapping an existing class with a new interface where you're trying to use an old component in a new system. So it lets you reuse older parts of the code to avoid reinventing the wheel. 
 
-How to use Adapter and Facade
+**How to use Adapter and Facade**
 
 Below, a legacy Rectangle component's display() method expects to receive "x, y, w, h" parameters. But the client wants to pass "upper left x and y" and "lower right x and y". This incongruity can be reconciled by adding an additional level of indirection – i.e. an Adapter object.
 
 So, to implement this pattern, you need to do the following:
+
 - You need to identify the players: the component(s) that you want to accommodate (i.e. the client), and the component that needs to adapt (i.e. the adaptee).
 - Then identify the interface that the client requires.
 - Design a "wrapper" class that can "impedance match" the adaptee to the client.
