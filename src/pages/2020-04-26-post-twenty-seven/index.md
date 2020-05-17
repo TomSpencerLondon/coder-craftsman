@@ -1,13 +1,6 @@
----
-path: "/post-twenty-seven"
-date: "2020-04-17"
-title: "Observer Pattern"
-author: "Tom Spencer"
----
-
 This is the second blog post in a series on Design Patterns, in which we're looking at some of the most helpful design patterns for your software design.
 
-The last post covered, the **Strategy Pattern** whcih you read here. 
+The last post covered, the **Strategy Pattern** which defines a family of algorithms, encapsulates them and makes them interchangeable.
 
 This post will look at the **Observer Pattern**, which enables you to create a one-to-many dependency where a change in one object results in automatic notification and change in the other objects.
 
@@ -19,7 +12,7 @@ The Observer Pattern is one of the most heavily used patterns in the Java Develo
 
 This apporach specifies a "pull" interaction model. Instead of the Subject "pushing" what has changed to all Observers, each Observer is responsible for "pulling" its particular "window of interest" from the Subject. 
 
-< Example ome auctions demonstrate this pattern. Each bidder possesses a numbered paddle that is used to indicate a bid. The auctioneer starts the bidding, and "observes" when a paddle is raised to accept the bid. The acceptance of the bid changes the bid price which is broadcast to all of the bidders in the form of a new bid.
+For example, some auctions demonstrate this pattern. Each bidder possesses a numbered paddle that is used to indicate a bid. The auctioneer starts the bidding, and "observes" when a paddle is raised to accept the bid. The acceptance of the bid changes the bid price which is broadcast to all of the bidders in the form of a new bid.
 
 There are various ways to implement the Observer Pattern but most revolve around a class design that includes Subject and Observer interfaces.
 
@@ -126,6 +119,6 @@ class PropertyChangedEventArgs<T> {
     }
 }
 ```
-We have now created one-to-many dependency where a change in one object - Person Class results in automatic notification and change in the other objects, such as Property Class. 
+We have now created one-to-many dependency where a change in one object - Person Class - results in automatic notification and change in the other objects, such as Property Class. 
 
-The next design pattern we cover is the Decorator Pattern.
+The next design pattern we cover is the Decorator Pattern, which attaches additional responsibilities to an object dynamically, enabling you to extend functionality by providing a flexible alternative to subclassing.
