@@ -17,7 +17,7 @@ A command object encapsulates a request by binding together a set of actions on 
 When called, execute() causes the actions to be invoked on the receiver. From the outside, no other objects really know what
 actions get performed on what receiver; all they know is that they when they call the execute() method, their request will be serviced.
 
-### How to use the Command Pattern ###
+**How to use the Command Pattern**
 
 So, the Command Pattern decouples the object that invokes the operation from the one that knows how to perform it. To achieve this separation, the designer creates an abstract base class that maps a receiver (an object) with an action (a pointer to a member function). The base class contains an execute() method that simply calls the action on the receiver.
 
@@ -25,7 +25,7 @@ Clients of Command objects treat each object as a "black box" by simply invoking
 
 A Command class holds some subset of the following: an object, a method to be applied to the object, and the arguments to be passed when the method is applied. The Command's "execute" method then causes the pieces to come together.
 
-The client that creates a command is not the same client that executes it. This separation provides flexibility in how you time and sequence of commands, and making commands objects, enables you to pass, stage, share, load in a table, and otherwise use them like any other object.
+The client that creates a command is not the same client that executes it. This separation provides flexibility in how you time and sequence commands, and making commands objects, enables you to pass, stage, share, load in a table, and otherwise use them like any other object.
 
 To make use of Command:
 
@@ -34,7 +34,7 @@ To make use of Command:
 - You then instantiate a Command object for each deferred execution request, passing the Command object from the creator to the invoker.
 - The invoker decides when to execute(). 
 
-So, looking at Command in jave, we can decouple a producer from a consumer:
+So, looking at Command in java, we can decouple a producer from a consumer:
 
 ```
 interface Command {
@@ -86,8 +86,7 @@ take out the trash
 take money from the rich, take votes from the poor
 sell the bugs, charge extra for the fixes
 ```
-Don't forget that Commands give us a way to package a piece of computation (a receiver and a set of actions) and pass it around as a first-class object. The computation itself may be invoked long after some client application creates the command object and may even be be invoked by a different thread. So we can take this scenario and apply it to many useful applications such as schedulers, thread pools
-and job queues, to name a few. These are just some of the mnay ways Command is useful to us.
+Don't forget that Commands give us a way to package a piece of computation (a receiver and a set of actions) and pass it around as a first-class object. The computation itself may be invoked long after some client application creates the command object and may even be be invoked by a different thread. So we can take this scenario and apply it to many useful applications such as schedulers, thread pools and job queues, to name a few. These are just some of the mnay ways Command is useful to us.
 
 The next blog in the series will look at the **Adapter and Facade Pattern**, whcih converts the interface of a class into another interface, thereby matching interfaces of different classes.
 
