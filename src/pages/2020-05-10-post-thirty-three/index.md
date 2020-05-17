@@ -8,13 +8,11 @@ The **Iterator Pattern** provides a way to access the elements of a collection o
 
 ![iterator](https://user-images.githubusercontent.com/63193195/81504508-9bf45780-92e1-11ea-893e-b742837a3c5b.jpg)
 
-An aggregate object such as a list should give you a way to access its elements without exposing its internal structure. Moreover, you might want to traverse the list in different ways, depending on what you need to accomplish. You might also need to have more than one traversal pending on the same list and provide a uniform interface for traversing many types of aggregate objects (i.e. polymorphic iteration) might be valuable.
+The Iterator provides ways to access elements of an aggregate object sequentially without exposing the underlying structure of the object. It can be compared with a filing symstem in an office, where the adminstrator creates a set up they understand and can naigate to find the file another member of the office is looking for - they are the "iterator" in this setting. 
 
-As we've said, Iterator allows traversal of the elements of an aggregate without exposing the underlying implementation. It also places the task of traversal on the iterator object, not on the aggregate, making the aggregate interface and implementation simpler and placing the responsibility where it should be. The key idea is to take the responsibility for access and traversal out of the aggregate object and put it into an Iterator object that defines a standard traversal protocol.
+The key idea with the Iterator is to take the responsibility for access and traversal out of the aggregate object and put it into an Iterator object, defining a standard traversal protocol. Given that the task of traversal is placed on the iterator object, rather than the aggregate, the aggregate interface and implementation is simpler as responsibility is placed where it should be. 
 
-The Iterator abstraction is fundamental to an emerging technology called "generic programming". This strategy seeks to explicitly separate the notion of "algorithm" from that of "data structure". The motivation is to: promote component-based development, boost productivity, and reduce configuration management.
-
-As an example, if you wanted to support four data structures (array, binary tree, linked list, and hash table) and three algorithms (sort, find, and merge), a traditional approach would require four times three permutations to develop and maintain. Whereas, a generic programming approach would only require four plus three configuration items.
+The Iterator abstraction is fundamental to an emerging technology called "generic programming", which seeks to explicitly separate the notion of "algorithm" from that of "data structure". The idea behind it is to promote component-based development, boost productivity, and reduce configuration management.
 
 Structure
 The Client uses the Collection class' public interface directly. But access to the Collection's elements is encapsulated behind the additional level of abstraction called Iterator. Each Collection derived class knows which Iterator derived class to create and return. After that, the Client relies on the interface defined in the Iterator base class.
@@ -22,9 +20,7 @@ The Client uses the Collection class' public interface directly. But access to t
 Iterator example
 
 Example
-The Iterator provides ways to access elements of an aggregate object sequentially without exposing the underlying structure of the object. Files are aggregate objects. In office settings where access to files is made through administrative or secretarial staff, the Iterator pattern is demonstrated with the secretary acting as the Iterator. Several television comedy skits have been developed around the premise of an executive trying to understand the secretary's filing system. To the executive, the filing system is confusing and illogical, but the secretary is able to access files quickly and efficiently.
 
-On early television sets, a dial was used to change channels. When channel surfing, the viewer was required to move the dial through each channel position, regardless of whether or not that channel had reception. On modern television sets, a next and previous button are used. When the viewer selects the "next" button, the next tuned channel will be displayed. Consider watching television in a hotel room in a strange city. When surfing through channels, the channel number is not important, but the programming is. If the programming on one channel is not of interest, the viewer can request the next channel, without knowing its number.
 
 Iterator example
 
