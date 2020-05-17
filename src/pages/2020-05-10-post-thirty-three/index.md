@@ -22,8 +22,6 @@ To make use of the Iterator, you need to add a create_iterator() method to the "
 
 Clients ask the collection object to create an iterator object. Clients use the first(), is_done(), next(), and current_item() protocol to access the elements of the collection class.
 
-
-
 Let's take a look at the Iterator in Java, before and after. 
 
 Without Iterator the class SomeClassWithData provides access to its internal data structure. Clients can accidentally or maliciously trash that data structure.
@@ -135,4 +133,6 @@ Output
 9  8  7  6  5  4  3  2  1
 9 9  8 8  7 7  6 6  5 5  4 4  3 3  2 2  1 1
 ```
-Polymorphic Iterators rely on Factory Methods to instantiate the appropriate Iterator subclass. Memento is often used in conjunction with Iterator. An Iterator can use a Memento to capture the state of an iteration. The Iterator stores the Memento internally.
+So there we have it, a method to access different items without revealing their underlying structure. If you decide to use polymorphic Iterators, you will need the Factory Method to instantiate the appropriate Iterator subclass. Memento is often used in conjunction with Iterator. An Iterator can use a Memento to capture the state of an iteration. The Iterator stores the Memento internally.
+
+This is the final blog on a series exploring Design Patters, you can see the full series and the eight patterns covered in the first blog post. 
